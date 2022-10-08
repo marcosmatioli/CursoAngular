@@ -1,0 +1,23 @@
+<h1>Event Binding</h1>
+
+<button (click)="alertaInfo('Clicou no botão do evento')">Eventos</button>
+<br>
+<br>
+<button (click)="alertaInfo2($event)">Evento 2</button>
+<br>
+<br>
+<div style="background-color:red ; width: 100px; height: 100px; text-align: center;" id="quadrado">
+    <div style="background-color: yellow; border-radius: 200px; height: 10px;width: 10px; padding: 45px;" id="circulo"></div>
+</div>
+<br><br>
+<div style="background-color:blue ; width: 100px; height: 100px; text-align: center;" (mousemove)="movermouse($event)" id="mouseEvent1"></div>
+<span>Posição X: {{position.x}} || </span> <span>Posição Y: {{position.y}}</span>
+<br>
+<br>
+<button (click)="mudarBackground()"> Mudar Background </button>
+
+<br><br>
+<span>Quantidade de vezes que você clicou no botão: {{qtd}}</span>
+<br>
+<br>
+<hr>

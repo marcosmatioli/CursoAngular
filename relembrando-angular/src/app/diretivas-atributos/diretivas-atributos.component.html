@@ -1,0 +1,37 @@
+<ng-content select="h1">
+    
+</ng-content>
+
+<div *ngIf="nome == 'Matioli'">
+    <p [ngClass]="{'active': valor, 'disable': !valor}">ngClass!</p>
+    <hr>
+    <p [ngStyle]="{'height': height, 'background': bgc }">ngStyle</p>
+    <hr>
+
+</div>
+<p>NG-Template</p>
+<ng-template ngFor let-item [ngForOf]="list"> <!-- basicamente aqui ele faz tudo antes do DOM ser carregado com isso vc ganha tempo de processamento pois ele
+vai fazer aqui primeiro e depois fazer o testo-->
+    <p>{{item.nome}}</p>
+</ng-template>
+
+<hr><hr>
+<input type="" [(ngModel)]="nome">{{nome}}
+<li *ngFor="let item of list">{{item.nome}}</li>
+<button (click)="salvar()">Salvar</button>
+<hr><hr>
+
+<ng-content select="h3"> <!--seleciona o que vc quer que aparece e na ordem que vc quiser-->
+
+</ng-content>
+
+<hr><hr>
+
+<h1>Pipes</h1>
+<input type="text" [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+<li *ngFor="let item of list">{{item.nome | uppercase}}</li>
+<!--pipers são metodos ja do-->
+<br>
+{{date | date: 'dd/MM/YYYY'}} Pipe para date <!--pipe de data-->
+<hr><hr>

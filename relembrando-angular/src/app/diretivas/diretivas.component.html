@@ -1,0 +1,39 @@
+<p>ngIf</p>
+<p *ngIf="!showthis; else outroText">FALSE</p>
+<p *ngIf="showthis">TRUE</p>
+<ng-template #outroText>
+    <p>Outro Texto</p>
+</ng-template>
+
+<br>
+<button (click)="falseandtrue()">{{showinfo}}</button>
+<hr>
+<hr>
+<p>ngFor</p>
+
+<ul>
+    <li *ngFor="let item of list; let i = index;" (click)="onClickEventList(i)">
+      {{i}} --  Nome: {{item.nome}} -- Idade: {{item.idade}}
+    </li>
+</ul>
+<br>
+<input type="text" id="textname">
+<input type="text" id="textidade">
+<button (click)="onClickAddList()">Add</button>
+
+<hr><hr>
+<p>ngSwitch</p>
+<input type="text" [(ngModel)]="nome">
+<div [ngSwitch]="nome">
+    <p *ngSwitchCase="'numeros'"> 
+        Caso 1
+    </p>
+    <p *ngSwitchCase="'nay'"> 
+        Caso 2
+    </p>
+    <p *ngSwitchDefault="">
+        Caso Default
+    </p>
+</div>
+
+<hr><hr>

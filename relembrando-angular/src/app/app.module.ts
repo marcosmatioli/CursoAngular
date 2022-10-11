@@ -9,6 +9,8 @@ import { InterpolationComponent } from './interpolation/interpolation.component'
 import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { DiretivasComponent } from './diretivas/diretivas.component';
+import { DiretivasAtributosComponent } from './diretivas-atributos/diretivas-atributos.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
     InterpolationComponent,
     PropertyBindingComponent,
     EventBindingComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    DiretivasComponent,
+    DiretivasAtributosComponent
   ],
   imports: [
     BrowserModule,

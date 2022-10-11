@@ -3,6 +3,11 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentChecked,AfterContent
 @Component({
   selector: 'app-root',
   template: `
+  <app-diretivas-atributos>
+<h1>Aulas de Diretivas de Atributos NG CONTENT</h1>
+<h3>Fim da aula de diretivas de atributos NG CONTENT</h3>
+  </app-diretivas-atributos>
+  <app-diretivas></app-diretivas>
   <app-two-way-binding></app-two-way-binding>
   <app-event-binding></app-event-binding>
   <app-property-binding></app-property-binding>

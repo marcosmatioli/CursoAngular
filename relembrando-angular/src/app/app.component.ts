@@ -3,6 +3,10 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentChecked,AfterContent
 @Component({
   selector: 'app-root',
   template: `
+  <app-input [contador]="valor"></app-input>
+  <button (click)="adicionar()">Adicionar no valor de outro componente</button>
+  <br>
+  <app-new-component></app-new-component>
   <app-diretivas-atributos>
 <h1>Aulas de Diretivas de Atributos NG CONTENT</h1>
 <h3>Fim da aula de diretivas de atributos NG CONTENT</h3>
@@ -18,8 +22,8 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentChecked,AfterContent
 })
 export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentChecked,AfterContentInit,AfterViewInit,AfterViewChecked {
 
-  public valor: number = 5;
-
+  public valor: number = 0;
+  public addValue : number = 10;
   public destruir:boolean = true;
   public nome: string = "Nome 1";
 

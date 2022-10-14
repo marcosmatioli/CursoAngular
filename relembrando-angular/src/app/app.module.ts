@@ -11,6 +11,8 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
 import { DiretivasAtributosComponent } from './diretivas-atributos/diretivas-atributos.component';
+import { SharedModule } from './shared/shared.module';
+import { InputComponent } from './shared/input/input.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { DiretivasAtributosComponent } from './diretivas-atributos/diretivas-atr
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

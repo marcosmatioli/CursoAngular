@@ -3,6 +3,17 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentChecked,AfterContent
 @Component({
   selector: 'app-root',
   template: `
+
+<p>Basicamente ele esta trazendo os dados do outro componente então estamos trafegando dados entre componentes para poder utilizar em outro componente.</p>
+  <ng-template [ngIf]="getDados">
+
+<h1>Nome:{{getDados.nome}}</h1> 
+<h1>Idade:{{getDados.idade}}</h1>
+
+  </ng-template>
+
+  <app-output (EnviarDados)="setDados($event)"></app-output>
+    <br>
   <app-input [contador]="valor"></app-input>
   <button (click)="adicionar()">Adicionar no valor de outro componente</button>
   <br>
@@ -26,8 +37,12 @@ export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentChe
   public addValue : number = 10;
   public destruir:boolean = true;
   public nome: string = "Nome 1";
-
+  public getDados: {nome:string,idade:number} | undefined; // utilizando o pipe
   constructor(){}
+
+  public setDados($event: {nome:string,idade:number}){
+    this.getDados = $event;
+  }
 
   public adicionar(){
     return this.valor += 1;

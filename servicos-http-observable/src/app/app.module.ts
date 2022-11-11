@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 //componentes
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +16,8 @@ import { FoodAddComponent } from './food-add/food-add.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   exports: [
     FoodListComponent,

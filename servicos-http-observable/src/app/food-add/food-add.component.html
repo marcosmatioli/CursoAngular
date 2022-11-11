@@ -1,3 +1,6 @@
-<input type="text" placeholder="Digite o alimento a ser adicionado" #inputValue>
+<input type="text" placeholder="Digite o alimento" #inputAlimentoValue>
 <br>
-<button (click)="foodAddItem(inputValue.value)">Add item</button>
+<button (click)="foodAddItem(inputAlimentoValue.value)">Add item</button>
+<br><br>
+<input type="text" #inputRetirarAlimento>
+<button (click)="foodListDelet(inputRetirarAlimento.value)">Retirar Alimento</button>

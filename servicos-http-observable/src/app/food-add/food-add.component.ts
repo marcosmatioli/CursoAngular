@@ -15,4 +15,7 @@ export class FoodAddComponent implements OnInit {
   public foodAddItem(value : string){
     return this.foodListService.foodListAdd(value);
   }
+  public foodListDelet(value : string){
+    return this.foodListService.foodListDelet(value);
+  }
 }

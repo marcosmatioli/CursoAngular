@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //services
 import { FoodListService } from '../services/food-list.service';
+import { FoodList } from '../modules/food-list';
 
 @Component({
   selector: 'app-food-list',
@@ -9,12 +10,22 @@ import { FoodListService } from '../services/food-list.service';
 })
 export class FoodListComponent implements OnInit {
 
-  public foodList: Array<String> = [];
+  public foodList: FoodList | any;
+
   constructor(private foodListService:FoodListService) {
   }
 
   ngOnInit(): void {
-    this.foodList = this.foodListService.foodList();
+    this.foodListService.foodList().subscribe(
+      res => this.foodList = res,
+      error => console.log(error)
+    );
+    //ele fica escutando os eventos em tempo real, então realmente fica esperando uma ação e cair no sucess
+    this.foodListService.imetEvent.subscribe(
+      res => alert(`Olha você adicionou => ${res}`),
+      error => alert(`deu algum erro!${error}`),
+    );
+
   }
   
 }

@@ -1,0 +1,18 @@
+https://www.npmjs.com/package/json-server #site para consultar a documentação
+
+#instalar
+npm install -g json-server
+
+#EXEMPLO
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
+
+#inicializar
+json-server --watch db.json

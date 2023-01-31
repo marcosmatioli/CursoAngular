@@ -10,7 +10,7 @@ import { FoodList } from '../modules/food-list';
 })
 export class FoodListComponent implements OnInit {
 
-  public foodList: FoodList | any;
+  public foodList: Array<FoodList> = [];
 
   constructor(private foodListService:FoodListService) {
   }
@@ -22,10 +22,11 @@ export class FoodListComponent implements OnInit {
     );
     //ele fica escutando os eventos em tempo real, então realmente fica esperando uma ação e cair no sucess
     this.foodListService.imetEvent.subscribe(
-      res => alert(`Olha você adicionou => ${res}`),
+      res => {
+        alert(`Olha você adicionou => ${res.nome}`)
+        return this.foodList.push(res)
+      },
       error => alert(`deu algum erro!${error}`),
     );
-
   }
-  
 }

@@ -1,6 +1,8 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
+//module interface
 import { FoodList } from '../modules/food-list';
 
 @Injectable({
@@ -15,6 +17,14 @@ export class FoodListService {
   private list: Array <String> = [
     "X Bacon","Feijão","Ovo"
   ];
+
+  private httpOptions = {
+    Headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      //passando header tipo um token e tals...
+    })
+  }
+
   constructor(private http: HttpClient) { }
 
   // public foodList(){
@@ -41,15 +51,21 @@ export class FoodListService {
       error => error
     )
   }
-
-  public foodListDelet(value : string){
-    return this.list.pop();
+  public foodListEdit(value: string, id : number): Observable <FoodList>{
+    return this.http.put<FoodList>(`${this.url}list-food/${id}`, { nome: value }).pipe(
+      res => res,
+      error => error
+    )
   }
-
+  public foodListDelete(id : number): Observable <FoodList>{
+    return this.http.delete<FoodList>(`${this.url}list-food/${id}`).pipe(
+      res => res,
+      error => error
+    )
+  }
 /*   public foodListAlert(value : string){
     return this.imetEvent.emit(value);
   } */
-
   public foodListAlert(value : FoodList){
     return this.imetEvent.emit(value);
   }

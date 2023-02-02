@@ -18,7 +18,4 @@ export class FoodAddComponent implements OnInit {
       error => error
     );
   }
-  public foodListDelet(value : string){
-    return this.foodListService.foodListDelet(value);
-  }
 }

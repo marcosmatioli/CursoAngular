@@ -1,0 +1,24 @@
+<hr><hr>
+<br>
+input caixa do forms no angular
+<br><br>
+
+<form action="" #form="ngForm">
+    
+    <label for="">
+        <input type="text" name="nome" ngModel>Escreva aqui
+    </label>
+<br>
+    <label for="">
+        <input type="radio" name="sexo" value= "Masculino" ngModel>Masculino
+    </label>
+<br>
+    <label for="">
+        <input type="radio" name="sexo" value= "Feminino" ngModel>Feminino
+    </label>
+<br>
+</form>
+<br>
+<!-- então o valor do form é o name que a gente da pra ele-->
+{{form.value | json }}
+<br>

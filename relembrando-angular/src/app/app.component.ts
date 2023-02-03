@@ -29,6 +29,7 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentChecked,AfterContent
   <app-interpolation></app-interpolation>
   <app-tittle *ngIf="destruir"></app-tittle>
   <button (click)="destruirComponent()">Mostrar / Ocultar</button>
+  <app-forms></app-forms>
   <router-outlet></router-outlet>`
 })
 export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentChecked,AfterContentInit,AfterViewInit,AfterViewChecked {

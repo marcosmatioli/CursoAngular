@@ -13,6 +13,7 @@ import { DiretivasComponent } from './diretivas/diretivas.component';
 import { DiretivasAtributosComponent } from './diretivas-atributos/diretivas-atributos.component';
 import { SharedModule } from './shared/shared.module';
 import { InputComponent } from './shared/input/input.component';
+import { FormsComponent } from './forms/forms.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { InputComponent } from './shared/input/input.component';
     EventBindingComponent,
     TwoWayBindingComponent,
     DiretivasComponent,
-    DiretivasAtributosComponent
+    DiretivasAtributosComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
